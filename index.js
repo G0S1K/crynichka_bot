@@ -1,12 +1,13 @@
 const { Telegraf, Markup, Scenes, session } = require("telegraf");
 require("dotenv").config();
 const FirstQuest = require("./scenes/FirstQuest");
-const SecondQuest = require("./scenes/SecondQuest")
-const ThirdQuest = require("./scenes/ThirdQuest")
+const SecondQuest = require("./scenes/SecondQuest");
+const ThirdQuest = require("./scenes/ThirdQuest");
+const Finish = require("./scenes/Finish");
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
-const stage = new Scenes.Stage([FirstQuest, SecondQuest, ThirdQuest]);
+const stage = new Scenes.Stage([FirstQuest, SecondQuest, ThirdQuest, Finish]);
 bot.use(session());
 bot.use(stage.middleware());
 
