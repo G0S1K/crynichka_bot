@@ -7,18 +7,18 @@ firstQuest.enter(async (ctx) => {
 		'Вопрос 1: \n С какого года партизанский отряд "Большевик" начал базироваться партизанской криничке?',
 		Markup.inlineKeyboard([
 			[
-				Markup.button.callback("1944", "no"),
-				Markup.button.callback("1999", "no"),
+				Markup.button.callback("1944", "no1"),
+				Markup.button.callback("1999", "no1"),
 			],
 			[
-				Markup.button.callback("1788", "no"),
-				Markup.button.callback("1941", "yes"),
+				Markup.button.callback("1788", "no1"),
+				Markup.button.callback("1941", "yes1"),
 			]
 		])
 	);
 });
 
-firstQuest.action("yes", async (ctx) => {
+firstQuest.action("yes1", async (ctx) => {
 	try {
 		await ctx.answerCbQuery();
 		await ctx.reply("Ответ верный! \n Давайте пойдем ответим на следующий вопрос!");
@@ -29,7 +29,7 @@ firstQuest.action("yes", async (ctx) => {
 	}
 });
 
-firstQuest.action("no", async (ctx) => {
+firstQuest.action("no1", async (ctx) => {
 	try {
 		await ctx.answerCbQuery();
 		await ctx.reply("Ответ неверный! \n Давайте пойдем ответим на следующий вопрос!");

@@ -7,18 +7,18 @@ secondQuest.enter(async (ctx) => {
 		"Вопрос 2: \n В каком городе расположена партизанская криничка?",
 		Markup.inlineKeyboard([
 			[
-				Markup.button.callback("Минск", "no"),
-				Markup.button.callback("Гомель", "yes"),
+				Markup.button.callback("Минск", "no2"),
+				Markup.button.callback("Гомель", "yes2"),
 			],
 			[
-				Markup.button.callback("Пинск", "no"),
-				Markup.button.callback("Жлобин", "no"),
+				Markup.button.callback("Пинск", "no2"),
+				Markup.button.callback("Жлобин", "no2"),
 			],
 		])
 	);
 });
 
-secondQuest.action("yes", async (ctx) => {
+secondQuest.action("yes2", async (ctx) => {
 	try {
 		await ctx.answerCbQuery();
 		const markNow = ctx.scene.state.mark;
@@ -32,7 +32,7 @@ secondQuest.action("yes", async (ctx) => {
 	}
 });
 
-secondQuest.action("no", async (ctx) => {
+secondQuest.action("no2", async (ctx) => {
 	try {
 		await ctx.answerCbQuery();
 		const markNow = ctx.scene.state.mark;
